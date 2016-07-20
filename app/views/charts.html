@@ -1,0 +1,58 @@
+{% extends "layout_dwp_admin.html" %}
+
+{% block page_title %}
+  Analytics Dasboard
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <a class="link-back" href="/">Back</a>
+    <h1 class="heading-medium">Dashobard</h1>
+      <div class="grid-row">
+
+        <div class="column-one-third">
+          <div class="chart">
+            <h2 class="heading-small">Heading</h2>
+            <div id="chart-1"></div>
+          </div>
+        </div>
+
+        <div class="column-one-third">
+          <div class="chart">
+            <h2 class="heading-small">Heading</h2>
+            <div id="chart-2"></div>
+          </div>
+        </div>
+
+        <div class="column-one-third">
+          <div class="chart">
+            <h2 class="heading-small">Heading</h2>
+            <div id="chart-3"></div>
+          </div>
+        </div>
+
+    </div>
+
+
+
+  </main>
+{% endblock %}
+{% block page_scripts %}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="/public/javascripts/ga-charts.js"></script>
+
+<style>
+.chart {
+  display: block;
+  border: 1px solid #DEE0E2;
+  height: 300px;
+}
+
+.heading-small {
+  margin: 0 0 10px;
+  padding: 5px;
+  background: rgba(40,161,151,0.25);
+}
+
+</style>
+{% endblock %}

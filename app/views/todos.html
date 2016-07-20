@@ -1,0 +1,91 @@
+{% extends "layout_dwp.html" %}
+
+{% block page_title %}
+  Listing to-dos - DWP design patterns
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/">
+        Back
+      </a>
+      <span class="heading-secondary">
+          Draft
+      </span>
+      <h1 class="heading-xlarge">
+        Listing to-dos
+      </h1>
+
+     <h2 class="heading-medium">
+       Standard pattern
+     </h2>
+     <p>
+       Use this when:
+       <ul class="list list-bullet">
+         <li>
+           a list of things need to be done
+         </li>
+         <li>
+           each thing is assigned to a single user
+         </li>
+         <li>
+           each thing links to thing that needs to be done
+         </li>
+         <li>
+           completed things are stored and viewed elsewhere
+         </li>
+       </ul>
+     </p>
+
+     <h2 class="heading-small">
+       Research notes
+     </h2>
+
+     <p>
+       People found the layout easy to use and interact with, especially on mobile. It is important you use verbs for the to-do label so people clearly know what to expect. Whilst people positively responded to doing the to-dos in any order, most naturally completed them top to bottom, so it's important to order them logically for your service. If a to-do can be part-completed, an indication of progress is a must.
+     </p>
+
+    <div class="example">
+      {% include "includes/todo-standard.html" %}
+    </div>
+
+    <h2 class="heading-medium">
+      Alternative pattern
+    </h2>
+
+    <p>
+      Use this when:
+      <ul class="list list-bullet">
+        <li>
+          a list of things need to be done in a single view by multiple users
+        </li>
+        <li>
+          each thing is assigned to one or multiple users
+        </li>
+        <li>
+          each thing needs to have supporting content
+        </li>
+        <li>
+          each thing needs to be completed by a specific date
+        </li>
+        <li>
+          completed things are stored and viewed elsewhere
+        </li>
+      </ul>
+    </p>
+
+    <div class="example">
+      {% include "includes/todo-alternative.html" %}
+    </div>
+
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

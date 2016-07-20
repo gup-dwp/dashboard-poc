@@ -1,0 +1,161 @@
+{% extends "layout_dwp.html" %}
+
+{% block page_title %}
+  Filling in something on behalf of someone else - DWP design patterns
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a class="link-back" href="/">Back</a>
+
+      <h1 class="heading-xlarge">
+        <span class="heading-secondary">
+            Draft
+        </span>
+      Filling in something on behalf of someone else</h1>
+
+     <h2 class="heading-medium">Standard pattern</h2>
+     <p class="text">
+       Use this when either:
+       <ul class="list list-bullet">
+         <li>the user legally needs to declare if they're completing the transaction on behalf of someone else - not solely to gather information for the business ('MI')</li>
+         <li>there's data to show that incorrect information is being put into the transaction by third parties because they mistake themselves for the end user</li>
+       </ul>
+     </p>
+     <h2 class="heading-small">Research notes</h2>
+    <p class="text">User research for <a href="http://dwp-digital-services.herokuapp.com/projects/8/carers_allowance_digital_service">Carer's Allowance</a>
+      found that asking people early in the transaction if they were completing it on behalf of the carer stopped them from mistakenly entering their own details later in the form.</p>
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="example">
+      <h1 class="heading-xlarge">Are you the carer?</h1>
+
+        <div class="column-two-thirds">
+
+          <form>
+            <fieldset>
+              <div class="form-group">
+                <legend class="hidden">Are you the carer?</legend>
+                <!-- No data-targets to avoid duplication, see jQuery at bottom of this page -->
+                <label class="block-label" for="carer-yes">
+                  <input id="carer-yes" type="radio" name="carer" value="yes">
+                  Yes, you're the carer
+                </label>
+
+                <label class="block-label" for="carer-no">
+                  <input id="carer-no" type="radio" name="carer" value="no">
+                 No, you're filling this in on behalf of the carer
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="js-hidden panel panel-border-narrow" id="third-party-details">
+              <div class="form-group">
+                  <fieldset>
+                    <label class="form-label-bold" for="third-party-name">
+                     Your name and organisation
+                   </label>
+                   <input type="text" class="form-control form-control-2-3" id="third-party-name" name="third-party-name">
+                 </fieldset>
+              </div>
+              <p>Fill in the rest of the form as if you're the carer. For example, if asked for 'your address' put the address of the person doing the caring.
+             </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <details>
+        <summary><span class="summary">View code snippet</span></summary>
+
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+            <div class="tab-panel">
+            <div class="tab-panel-menu">
+              <a href="#" class="tab-link tab-link-active">HTML</a>
+              <a href="#" class="tab-link">JS</a>
+            </div>
+
+            <div class="tab-panes">
+              <div class="tab-pane" style="display: block;">
+                <pre class="language-markup">
+                  <code>
+  {{ htmlToPrism('<h1 class="heading-xlarge">Are you the carer?</h1>
+
+  <form>
+    <fieldset>
+      <div class="form-group">
+        <legend class="hidden">Are you the carer?</legend>
+        <label class="block-label" for="carer-yes">
+          <input id="carer-yes" type="radio" name="carer" value="yes">
+          Yes, you&rsquo;re the carer
+        </label>
+
+        <label class="block-label" for="carer-no">
+          <input id="carer-no" type="radio" name="carer" value="no">
+         No, you&rsquo;re filling this in on behalf of the carer
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="js-hidden panel panel-border-narrow" id="third-party-details">
+      <div class="form-group">
+          <fieldset>
+            <label class="form-label-bold" for="third-party-name">
+             Your name and organisation
+           </label>
+           <input type="text" class="form-control form-control-2-3" id="third-party-name" name="third-party-name">
+         </fieldset>
+      </div>
+      <p>Fill in the rest of the form as if you&rsquo;re the carer. For example, if asked for &rsquo;your address&rsquo; put the address of the person doing the caring.
+     </div>
+  </form>')  }}
+
+                  </code>
+                </pre>
+              </div>
+              <div class="tab-pane" style="display: none;">
+                <pre class="language-javascript">
+                  <code>
+  $(document).on('click', 'input[type="radio"]', function (e) {
+    if ($(e.target).attr('id') === 'carer-yes' || $(e.target).attr('id') === 'carer-no') {
+      if ($(this).attr('id') === 'carer-no') {
+        $('#third-party-details').removeClass('js-hidden');
+      } else {
+        $('#third-party-details').addClass('js-hidden');
+      }
+    }
+  });
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </main>
+{% endblock %}
+
+{% block page_scripts %}
+  <script>
+
+
+    $(document).on('click', 'input[type="radio"]', function (e) {
+      if ($(e.target).attr('id') === 'carer-yes' || $(e.target).attr('id') === 'carer-no') {
+        if ($(this).attr('id') === 'carer-no') {
+          $('#third-party-details').removeClass('js-hidden');
+        } else {
+          $('#third-party-details').addClass('js-hidden');
+        }
+      }
+    });
+
+  </script>
+{% endblock %}

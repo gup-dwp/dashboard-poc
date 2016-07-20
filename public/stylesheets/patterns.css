@@ -1,0 +1,143 @@
+.check-your-answers td {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  font-size-adjust: 0.5;
+  vertical-align: top;
+}
+
+@media (min-width: 641px) {
+  .check-your-answers td {
+    font-size: 19px;
+    line-height: 1.3157894737;
+  }
+}
+
+.check-your-answers .change-answer {
+  text-align: right;
+  font-weight: bold;
+  padding-right: 0;
+}
+
+ul.todo > li {
+  margin: 10px 0;
+  padding: 20px 15px;
+  border-left: 5px solid #0b0c0c;
+  border-bottom: 1px solid #bfc1c3;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  display: block;
+}
+
+ul.todo > li:hover {
+  background-color: #dee0e2;
+}
+
+ul.todo > li > a {
+  text-decoration: none;
+}
+
+ul.todo > li > a:hover {
+  text-decoration: underline;
+}
+
+ul.todo > li ul.todo-tagged li {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.1428571429;
+  font-weight: 400;
+  text-transform: none;
+  font-size-adjust: 0.5;
+  margin: 0 5px 5px 0;
+  padding: 0.5rem;
+  color: #6f777b;
+  text-align: center;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+@media (min-width: 641px) {
+  ul.todo > li ul.todo-tagged li {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+ul.todo > li ul.todo-tagged li.todo-assigned {
+  background: #6f777b;
+  color: #f8f8f8;
+}
+
+ul.todo > li a span {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.1428571429;
+  font-weight: 400;
+  text-transform: none;
+  font-size-adjust: 0.5;
+  color: #6f777b;
+  float: right;
+  padding: 0;
+  text-decoration: none;
+  text-align: left;
+  cursor: default;
+}
+
+@media (min-width: 641px) {
+  ul.todo > li a span {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media (max-width: 640px) {
+  ul.todo > li a span {
+    float: none;
+    display: block;
+  }
+}
+
+ul.todo > li.overdue {
+  border-left: 5px solid #b10e1e;
+}
+
+ul.todo > li.overdue a span {
+  color: #b10e1e;
+}
+
+.alert-default {
+  border-color: #2b8cc4;
+  background-color: #eaf4f9;
+}
+
+.alert-warning {
+  border-color: #b10e1e;
+  background-color: #fceaeb;
+}
+
+.alert-success {
+  border-color: #28a197;
+  background-color: #eaf6f5;
+}
+
+.notice.long .icon {
+  margin-top: 0;
+  top: 0px;
+}
+
+.padding-small {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.m-b-s {
+  margin-bottom: 12px !important;
+}
+
+@media (min-width: 641px) {
+  .m-b-s {
+    margin-bottom: 15px !important;
+  }
+}

@@ -1,0 +1,96 @@
+{% extends "layout_dwp_admin.html" %}
+
+{% block page_title %}
+  Analytics Dasboard
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="stats">
+    <h1 class="heading-xlarge">Apply for a Budgeting Loan</h1>
+    <p>01/02/2016 - 08/02/2016</p>
+    <div class="grid-row">
+
+      <div class="column-one-third">
+        <div class="chart">
+          <h2 class="heading-medium">Completion Rate</h2>
+          <div id="stat-1">
+            <h3 class="heading-xlarge">94.3%</h3>
+            <p><span class="increase up"></span>4% increase</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column-one-third">
+        <div class="chart">
+          <h2 class="heading-medium">Total applications</h2>
+          <div id="stat-2">
+            <h3 class="heading-xlarge">577</h3>
+            <p>(+121) <span class="increase"></span>5% increase</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column-one-third">
+        <div class="chart">
+          <h2 class="heading-medium">Completion time (average)</h2>
+          <div id="stat-3">
+            <h3 class="heading-xlarge">4m 12s</h3>
+            <p><span class="decrease"></span>15s decrease</p>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+  <div class="grid-row">
+
+    <div class="column-one-third">
+      <div class="chart">
+        <h2 class="heading-medium">Processing time (average)</h2>
+        <div id="stat-4">
+          <h3 class="heading-xlarge">2m 54s</h3>
+          <p><span class="decrease"></span>7s decrease</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column-one-third">
+      <div class="chart">
+        <h2 class="heading-medium">Problem tracing NINO</h2>
+        <div id="stat-5">
+          <h3 class="heading-xlarge">13 <span class="heading-small">untracable</span></h3>
+          <p>(+2)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column-one-third">
+      <div class="chart">
+        <h2 class="heading-medium">Assisted digital applications</h2>
+        <div id="stat-6">
+          <h3 class="heading-xlarge">4 <span class="heading-small">completed</span></h3>
+          <p>(+1)</p>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<style>
+h2.heading-medium {
+  //background: #DEE0E2;
+  //background: rgba(147,208,203, 0.25);
+  background: #DEE0E2;
+  background: rgba(191,193,195, 0.25);
+  font-size: 30px;
+  margin: 15px 0 25px;
+  padding: 12px 15px;
+}
+</style>
+
+
+  </main>
+{% endblock %}
+{% block page_scripts %}
+<script src="/public/javascripts/ga-stats.js"></script>
+{% endblock %}
