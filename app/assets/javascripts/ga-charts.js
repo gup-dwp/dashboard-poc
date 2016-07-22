@@ -126,9 +126,7 @@ function drawChart4() {
   ]);
 
   var options = {
-    colors: ['#93D0CB','#2B88C8','#96C4E4','#FFBF47','#28A197'],
-    is3D: true,
-    height : 250,
+    colors: ['#93D0CB','#2B88C8','#96C4E4','#FFBF47','#28A197']
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('chart-4'));

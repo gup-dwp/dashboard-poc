@@ -127,8 +127,6 @@ function drawChart4() {
 
   var options = {
     colors: ['#000000', '#BFC1C3','#DEE0E2','#6F777B','#6F777B'],
-  //  is3D: true,
-  //  height : 250,
     pieSliceText: ''
   };
 
