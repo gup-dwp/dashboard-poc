@@ -22,7 +22,7 @@ function drawChart1() {
               fontSize: 18,
           }
         },
-      colors: ['#28A197', '#93D0CB']
+      colors: ['#6F777B', '#BFC1C3']
   };
 
   var chart = new google.charts.Bar(document.getElementById('chart-1'));
@@ -57,7 +57,7 @@ function drawChart2() {
               fontSize: 18 // or the number you want
           }
         },
-        colors: ['#96C4E4', '#2B88C8','#28A197', '#93D0CB']
+        colors: ['#f8f8f8', '#BFC1C3','#DEE0E2','#6F777B']
       };
       var chart = new google.visualization.BarChart(document.getElementById('chart-2'));
       chart.draw(data, options);
@@ -99,7 +99,7 @@ function drawChart3() {
           fontSize: 18,
       }
     },
-    colors: ['#93D0CB', '#28A197'],
+    colors: ['#BFC1C3', '#6F777B'],
     annotations: {
       textStyle: {
         fontSize: 18,
@@ -126,9 +126,10 @@ function drawChart4() {
   ]);
 
   var options = {
-    colors: ['#93D0CB','#2B88C8','#96C4E4','#FFBF47','#28A197'],
+    colors: ['#000000', '#BFC1C3','#DEE0E2','#6F777B','#6F777B'],
     is3D: true,
-    height : 250,
+  //  height : 250,
+    pieSliceText: ''
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('chart-4'));

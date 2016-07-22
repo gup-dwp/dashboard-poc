@@ -2544,11 +2544,21 @@ h2.heading-medium {
   padding: 12px 15px;
 }
 
+h2.heading-medium.alt {
+  background: none;
+  margin-bottom: 0;
+}
+
 .stats h1.heading-xlarge {
-  margin: 0;
+  margin: 0 0 10px;
   padding-top: 10px;
 }
 
 .stats .grid-row {
   margin-bottom: 40px;
+  clear: both;
+}
+
+.stats .grid-row p {
+  font-size: 30px;
 }

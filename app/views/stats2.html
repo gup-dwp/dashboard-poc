@@ -7,7 +7,7 @@
 {% block content %}
   <main id="content" role="main" class="stats">
     <h1 class="heading-xlarge">Apply for a Budgeting Loan</h1>
-    <p>01/02/2016 - 08/02/2016</p>
+    <p class="date">01/02/2016 - 08/02/2016</p>
     <div class="grid-row">
 
       <div class="column-one-third">
@@ -77,6 +77,17 @@
 </div>
 
 <style>
+h1 {
+  float:left;
+  width: 50%;
+}
+p.date {
+  float:left;
+  width: 50%;
+  text-align: right;
+  margin: 32px 0 0;
+}
+
 h2.heading-medium {
   //background: #DEE0E2;
   //background: rgba(147,208,203, 0.25);
@@ -92,5 +103,4 @@ h2.heading-medium {
   </main>
 {% endblock %}
 {% block page_scripts %}
-<script src="/public/javascripts/ga-stats.js"></script>
 {% endblock %}

@@ -1,115 +1,142 @@
 google.charts.load("current", {packages:["bar", "corechart", "table"]});
-google.charts.setOnLoadCallback(drawChart2);
 
-function drawChart() {
-
+function drawChart1() {
   var data = google.visualization.arrayToDataTable([
-    ['Task', 'Hours per Day'],
-    ['Work',     11],
-    ['Eat',      2],
-    ['Commute',  2],
-    ['Watch TV', 2],
-    ['Sleep',    7]
+    ['', 'Online', 'Paper'],
+    ['Loan given', 92, 70],
+    ['No loan given', 22, 33]
   ]);
 
   var options = {
-    title:  'My Daily Activities',
-    titleTextStyle : {
-      bold: true,
-      fontSize: 16
-    }
+    bar: {groupWidth: "75%"},
+    bars: 'horizontal',
+      hAxis: {
+          minValue: 0,
+          maxValue: 100,
+          textStyle : {
+              fontSize: 18 // or the number you want
+          },
+        },
+        vAxis : {
+          textStyle : {
+              fontSize: 18,
+          }
+        },
+      colors: ['#28A197', '#93D0CB']
   };
 
-  var chart = new google.visualization.PieChart(document.getElementById('chart-1'));
+  var chart = new google.charts.Bar(document.getElementById('chart-1'));
+
+  chart.draw(data, google.charts.Bar.convertOptions(options));
+
+}
+
+function drawChart2() {
+      var data = google.visualization.arrayToDataTable([
+        ['Channel', 'Application in transit', 'Processor makes decision',"Applicant accepts offer",'Loan Paid'],
+        ['Online', 0,5,8,4],
+        ['Paper', 4,8,8,7]
+      ]);
+
+      var options = {
+        chartArea: {width: '55%'},
+        isStacked: true,
+        //bars: 'horizontal',
+        legend: {
+          position: 'right'
+        },
+        vAxis : {
+          textStyle : {
+              fontSize: 18,
+          }
+        },
+        hAxis: {
+          maxValue: 30,
+          gridlines: { count: 4 },
+          textStyle : {
+              fontSize: 18 // or the number you want
+          }
+        },
+        colors: ['#96C4E4', '#2B88C8','#28A197', '#93D0CB']
+      };
+      var chart = new google.visualization.BarChart(document.getElementById('chart-2'));
+      chart.draw(data, options);
+}
+
+function drawChart3() {
+  var data = google.visualization.arrayToDataTable([
+    ['Day', 'Paper', 'Online'],
+    ['Mon', 0, 9],
+    ['Tues', 0, 5],
+    ['Weds', 2, 6],
+    ['Thurs', 1, 10],
+    ['Fri', 2, 2],
+  ]);
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,2,
+                   { calc: "stringify",
+                     sourceColumn: 2,
+                     type: "string",
+                     fontSize: 18,
+                     role: "annotation" }
+                   ]);
+
+  var options = {
+    bar: {groupWidth: "95%"},
+    legend: { position: "none" },
+    isStacked: true,
+    //height : 250,
+    hAxis : {
+      textStyle : {
+          fontSize: 18,
+      }
+    },
+    vAxis : {
+      title : "Number of applications",
+      gridlines: { count: 5 },
+      maxValue : 11,
+      textStyle : {
+          fontSize: 18,
+      }
+    },
+    colors: ['#93D0CB', '#28A197'],
+    annotations: {
+      textStyle: {
+        fontSize: 18,
+        bold: true,
+        color: '#000',     // The color of the text.
+    }
+  }
+}
+
+  var chart = new google.visualization.ColumnChart(document.getElementById('chart-3'));
+  chart.draw(view, options);
+
+}
+
+function drawChart4() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['', ''],
+    ["Have'nt been on benefits long enough",    25],
+    ['Had a break from benefits for more than 4 weeks',      4],
+    ['Get contribution-based JSA or ESA',  6],
+    ['Not on benefits', 8],
+    ['To much Social Fund Debt',     45],
+  ]);
+
+  var options = {
+    colors: ['#93D0CB','#2B88C8','#96C4E4','#FFBF47','#28A197'],
+    is3D: true,
+    height : 250,
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('chart-4'));
+
   chart.draw(data, options);
+}
 
-  google.charts.setOnLoadCallback(drawChart);
-
-
-    var data = google.visualization.arrayToDataTable([
-      ['Year', 'Sales', 'Expenses', 'Profit'],
-      ['2014', 1000, 400, 200],
-      ['2015', 1170, 460, 250],
-      ['2016', 660, 1120, 300],
-      ['2017', 1030, 540, 350]
-    ]);
-
-    var options = {
-      chart: {
-        //title: 'Company Performance',
-      },
-      series: {
-        0: { color: '#000000' },
-        1: { color: '#e7711b' },
-        2: { color: '#f1ca3a' },
-        3: { color: '#6f9654' },
-        4: { color: '#1c91c0' },
-        5: { color: '#43459d' },
-      }
-    };
-
-    var chart = new google.charts.Bar(document.getElementById('chart-2'));
-
-    chart.draw(data, options);
-
-      /*  var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Name');
-        data.addColumn('number', 'Salary');
-        data.addColumn('boolean', 'Full Time Employee');
-        data.addRows([
-          ['Mike',  {v: 10000, f: '$10,000'}, true],
-          ['Jim',   {v:8000,   f: '$8,000'},  false],
-          ['Alice', {v: 12500, f: '$12,500'}, true],
-          ['Bob',   {v: 7000,  f: '$7,000'},  true]
-        ]);
-
-        var table = new google.visualization.Table(document.getElementById('chart-3'));
-
-        table.draw(data, {showRowNumber: false, width: '90%', height: '100%'});*/
-
-  }
-
-  function drawChart2(data,rows) {
-    console.log(rows);
-  }
-
-  function sortData(data) {
-    console.log(data);
-    var rowsTotal = data.rows,
-        rows      = [];
-
-    for (i=1; i<=rowsTotal; i++) {
-
-        var objName = 'chart1data' + i;
-        rows.push(data[objName]);
-
-    }
-    drawChart2(data,rows)
-  }
-
-  function getData(data) {
-    for (i=0; i<data.length;i++) {
-      var rows = [],
-          rowObj = {},
-          cells =data[i].content.$t.split(',');
-
-      for (var j=0; j<cells.length; j++) {
-          var keyVal = cells[j].split(':');
-          rowObj[keyVal[0].trim()] = keyVal[1].trim();
-      }
-      rows.push(rowObj);
-
-      if (rows[0].visible.toLowerCase() === 'true') {
-        sortData(rows[0])
-      }
-    }
-  }
-
-  $.ajax({
-		url:"https://spreadsheets.google.com/feeds/list/1gOuL1XQTsnfg6cSFTC1sSMW8E57cRql8CPhF73JRUDM/o5asou/public/basic?alt=json",
-		contentType: "application/json-in-script; charset=utf-8",
-		dataType: "jsonp",
-    success: function(data){
-      getData(data.feed.entry)
-    }
-  })
+google.charts.setOnLoadCallback(drawChart1);
+google.charts.setOnLoadCallback(drawChart2);
+google.charts.setOnLoadCallback(drawChart3);
+google.charts.setOnLoadCallback(drawChart4);
