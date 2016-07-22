@@ -95,9 +95,7 @@ function drawChart3() {
       title : "Number of applications",
       gridlines: { count: 5 },
       maxValue : 11,
-      textStyle : {
-          fontSize: 18,
-      }
+      titleTextStyle: {italic: false}
     },
     colors: ['#93D0CB', '#28A197'],
     annotations: {
@@ -126,7 +124,7 @@ function drawChart4() {
   ]);
 
   var options = {
-    colors: ['#93D0CB','#2B88C8','#96C4E4','#FFBF47','#28A197'],
+    colors: ['#93D0CB','#2B88C8','#96C4E4','#FFBF47','#28A197']
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('chart-4'));

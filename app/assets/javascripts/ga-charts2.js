@@ -95,9 +95,7 @@ function drawChart3() {
       title : "Number of applications",
       gridlines: { count: 5 },
       maxValue : 11,
-      textStyle : {
-          fontSize: 18,
-      }
+      titleTextStyle: {italic: false}
     },
     colors: ['#BFC1C3', '#6F777B'],
     annotations: {
